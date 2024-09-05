@@ -301,29 +301,38 @@ function Mission3(obg, newMissen){
     return obg
 }
 
-function Mission3(obg, newMissen){
-    
+function Mission4(obj, fire ){
+
+    for(const firearm of obj.equipment.firearms){
+
+        if(firearm.status == fire.status && firearm.type == fire.type){
+            firearm.quantity += fire.quantity 
+            return obj
+        }
+    }
+    obj.equipment.firearms.push(fire)
+    return obj
+        
 }
 
-function Mission3(obg, newMissen){}
+
 
 
 let a = Mission1(militaryUnit)
 
 a = Mission2(militaryUnit)
 
-a = Mission3(militaryUnit,  {
+
+a = Mission4(militaryUnit,{
   
-    location: "blablabla",
+    type: "M249 SAcccccW",
+  
+    quantity: 1000,
 
-    mission: "Counter-terrorism operations",
+    status: "Operational",
+  })
 
-    startDate: "2024-01-01",
-
-    estimatedEndDate: "2024-12-31", })
-
-
-console.log(a);
+console.log(a.equipment);
 
 
 
