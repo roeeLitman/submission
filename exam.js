@@ -290,13 +290,22 @@ function Mission2(obg){
 
 function Mission3(obg, newMissen){
 
-    const oldMissen = obg.currentDeployment.map( (missen) => { return {eventDate : missen.startDate, eventDescription : missen.mission }})
+    const oldMissen = {
+        eventDate : obg.currentDeployment.startDate, 
+        eventDescription : `${obg.currentDeployment.mission} in ${obg.currentDeployment.location}`}
+
     obg.history.push(oldMissen)
 
     obg.currentDeployment = newMissen
 
     return obg
 }
+
+function Mission3(obg, newMissen){
+    
+}
+
+function Mission3(obg, newMissen){}
 
 
 let a = Mission1(militaryUnit)
