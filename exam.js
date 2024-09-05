@@ -288,8 +288,14 @@ function Mission2(obg){
      return count
 }
 
-function Mission3(obg){
-    
+function Mission3(obg, newMissen){
+
+    const oldMissen = obg.currentDeployment.map( (missen) => { return {eventDate : missen.startDate, eventDescription : missen.mission }})
+    obg.history.push(oldMissen)
+
+    obg.currentDeployment = newMissen
+
+    return obg
 }
 
 
@@ -297,6 +303,18 @@ let a = Mission1(militaryUnit)
 
 a = Mission2(militaryUnit)
 
+a = Mission3(militaryUnit,  {
+  
+    location: "blablabla",
+
+    mission: "Counter-terrorism operations",
+
+    startDate: "2024-01-01",
+
+    estimatedEndDate: "2024-12-31", })
+
+
 console.log(a);
+
 
 
