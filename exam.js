@@ -1,3 +1,5 @@
+const { model } = require("mongoose");
+
 let militaryUnit = {
 
     name: "1st Infantry Division",
@@ -315,6 +317,9 @@ function Mission4(obj, fire ){
         
 }
 
+function Mission5(obj){
+
+}
 
 
 
@@ -334,5 +339,10 @@ a = Mission4(militaryUnit,{
 
 console.log(a.equipment);
 
-
+module.exports = {
+    Mission1,
+    Mission2,
+    Mission3,
+    Mission4
+}
 
